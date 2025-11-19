@@ -1,5 +1,6 @@
 # market-data-streaming
-DS 3022 Data Project 3
+### DS 3022 
+Data Project 3
 
 
 #### Coinbase Websocket Documentation
