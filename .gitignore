@@ -18,3 +18,6 @@ coinbase.duckdb
 # Ignore old work
 work
 work/*
+
+# Ignore DS_store
+.DS_store
