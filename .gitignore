@@ -2,6 +2,10 @@
 Pipfile
 Pipfile.lock
 
+# Ignore saved data
+data/*
+*.parquet
+
 # Ignore log files
 logs
 logs/*
