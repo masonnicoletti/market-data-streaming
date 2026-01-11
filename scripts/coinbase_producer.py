@@ -11,7 +11,7 @@ websocket_uri = "wss://ws-feed.exchange.coinbase.com"
 
 
 logging.basicConfig(
-    filename='./logs/coinbase_producer.log',
+    filename='../logs/coinbase_producer.log',
     level=logging.INFO, 
     format='%(asctime)s - %(levelname)s - %(message)s',
     filemode='a'

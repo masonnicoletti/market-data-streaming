@@ -5,7 +5,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 logging.basicConfig(
-    filename='./logs/data_visualizations.log',
+    filename='../logs/data_visualizations.log',
     level=logging.INFO, 
     format='%(asctime)s - %(levelname)s - %(message)s',
     filemode='w'
@@ -19,7 +19,7 @@ def produce_plots():
 
     try:
         # Connect to DuckDB instance
-        con = duckdb.connect(database='./coinbase.duckdb', read_only=False)
+        con = duckdb.connect(database='../coinbase.duckdb', read_only=False)
         logger.info("Connected to DuckDB instance")
 
 
@@ -33,7 +33,7 @@ def produce_plots():
         plt.title("Bitcoin Ticker Timeseries")
         plt.xlabel("Date")
         plt.ylabel("Price ($)")
-        plt.savefig("./plots/bitcoin_timeseries.png")
+        plt.savefig("../plots/bitcoin_timeseries.png")
         plt.close()
         logger.info("Produced Bitcoin timeseries plot")
 
@@ -47,7 +47,7 @@ def produce_plots():
         plt.title("Ethereum Ticker Timeseries")
         plt.xlabel("Date")
         plt.ylabel("Price ($)")
-        plt.savefig("./plots/ethereum_timeseries.png")
+        plt.savefig("../plots/ethereum_timeseries.png")
         plt.close()
         logger.info("Produced Ethereum timeseries plot")
 
@@ -62,7 +62,7 @@ def produce_plots():
         plt.title("Solana Ticker Timeseries")
         plt.xlabel("Date")
         plt.ylabel("Price ($)")
-        plt.savefig("./plots/solana_timeseries.png")
+        plt.savefig("../plots/solana_timeseries.png")
         plt.close()
         logger.info("Produced Solana timeseries plot")
 
@@ -85,7 +85,7 @@ def produce_plots():
         plt.title("Coinbase Product Timeseries")
         plt.legend()
         fig.tight_layout()
-        plt.savefig("./plots/coinbase_timeseries.png")
+        plt.savefig("../plots/coinbase_timeseries.png")
         plt.close()
         logger.info("Produced Coinbase product timeseries")
 
@@ -105,7 +105,7 @@ def produce_plots():
         plt.title("Coinbase Trades by Day")
         plt.xlabel("Day of Week")
         plt.ylabel("Number of Trades (1000)")
-        plt.savefig("./plots/daily_volume.png")
+        plt.savefig("../plots/daily_volume.png")
         plt.close()
         logger.info("Produced daily volume plot")
 
@@ -136,7 +136,7 @@ def produce_plots():
         plt.xticks(rotation=45)
         plt.legend(title="Buy-to-Sell Ratio")
         fig.tight_layout()
-        plt.savefig("./plots/product_buy_to_sell.png")
+        plt.savefig("../plots/product_buy_to_sell.png")
         plt.close()
         logger.info("Produced buy-to-sell timeseries per product")
 
@@ -159,7 +159,7 @@ def produce_plots():
         plt.xlabel("Hour of the Day")
         plt.ylabel("Average Transactions")
         plt.tight_layout()
-        plt.savefig("./plots/hourly_volume.png")
+        plt.savefig("../plots/hourly_volume.png")
         plt.close()
         logger.info("Produced average hourly volume plot")
 
@@ -173,7 +173,7 @@ def produce_plots():
 
         plt.pie(product_ratio['total_trades'], labels=product_ratio['product_id'])
         plt.title("Distribution of Coinbase Product Transactions")
-        plt.savefig("./plots/product_distribution.png")
+        plt.savefig("../plots/product_distribution.png")
         plt.close()
         logger.info("Produce product distribution plot")
 

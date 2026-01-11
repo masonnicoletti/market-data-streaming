@@ -10,7 +10,7 @@ import plotly.graph_objects as go
 from dash import Dash, html, dcc, Input, Output
 
 logging.basicConfig(
-    filename='./logs/daily_dashboard.log',
+    filename='../logs/daily_dashboard.log',
     level=logging.INFO, 
     format='%(asctime)s - %(levelname)s - %(message)s',
     filemode='w'
@@ -24,7 +24,7 @@ def produce_daily_dash():
 
     try:
         # Connect to DuckDB instance
-        con = duckdb.connect(database='./coinbase.duckdb', read_only=False)
+        con = duckdb.connect(database='../coinbase.duckdb', read_only=False)
         logger.info("Connected to DuckDB instance")
 
         # Determine today's date

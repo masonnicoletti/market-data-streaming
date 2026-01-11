@@ -13,7 +13,7 @@ kafka_broker = "localhost:19092"
 
 
 logging.basicConfig(
-    filename='./logs/coinbase_consumer.log',
+    filename='../logs/coinbase_consumer.log',
     level=logging.INFO, 
     format='%(asctime)s - %(levelname)s - %(message)s',
     filemode='a'
@@ -66,7 +66,7 @@ def write_parquet(data, window_start):
 
     # Write filename based on window time
     timestamp = window_start.strftime("%Y-%m-%d_%H")
-    filename = f"./data/coinbase_{timestamp}.parquet"
+    filename = f"../data/coinbase_{timestamp}.parquet"
     
     # Append new data to parquet file if already exists
     if os.path.exists(filename):

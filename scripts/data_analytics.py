@@ -4,7 +4,7 @@ import pandas as pd
 
 
 logging.basicConfig(
-    filename='./logs/data_analytics.log',
+    filename='../logs/data_analytics.log',
     level=logging.INFO, 
     format='%(asctime)s - %(levelname)s - %(message)s',
     filemode='w'
@@ -18,7 +18,7 @@ def data_analytics():
 
     try:
         # Connect to DuckDB instance
-        con = duckdb.connect(database='./coinbase.duckdb', read_only=False)
+        con = duckdb.connect(database='../coinbase.duckdb', read_only=False)
         logger.info("Connected to DuckDB instance")
 
 

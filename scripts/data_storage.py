@@ -4,7 +4,7 @@ import logging
 
 
 logging.basicConfig(
-    filename='./logs/data_storage.log',
+    filename='../logs/data_storage.log',
     level=logging.INFO, 
     format='%(asctime)s - %(levelname)s - %(message)s',
     filemode='w'
@@ -15,7 +15,7 @@ logger = logging.getLogger(__name__)
 def extract_parquet_files():
 
     # Extract locally saved parquet files from the data folder
-    files = os.listdir('./data/')
+    files = os.listdir('../data/')
     parquet_files = [file for file in files if file.endswith('.parquet')]
 
     return parquet_files
@@ -27,7 +27,7 @@ def data_storage():
 
     try:
         # Establish DuckDB connection
-        con = duckdb.connect(database='./coinbase.duckdb', read_only=False)
+        con = duckdb.connect(database='../coinbase.duckdb', read_only=False)
         logger.info("Connected to DuckDB instance")
 
         # Create table schema
@@ -58,7 +58,7 @@ def data_storage():
         parquet_files = extract_parquet_files()
         for file in parquet_files:
 
-            file_path = f"./data/{file}"
+            file_path = f"../data/{file}"
             
             # Insert data into table
             con.execute(f"""
